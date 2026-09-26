@@ -8,7 +8,10 @@ public class Lotto {
     private List<Integer> numbers;
 
     public Lotto(List<Integer> numbers) {
-        this.numbers = numbers;
+        validateSize(numbers);
+        validateNoDuplicate(numbers);
+        validateRange(numbers);
+        this.numbers = numbers;   // 검증 다 통과한 뒤에 저장
     }
 
     private void validateNoDuplicate(List<Integer>numbers){
