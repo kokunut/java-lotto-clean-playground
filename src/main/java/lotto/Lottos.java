@@ -24,4 +24,8 @@ public class Lottos {
     private int calculateLottoCount(int purchaseAmount) {
         return purchaseAmount / 1000;
     }
+
+    public List<Lotto> getLottos() {
+        return lottos;
+    }
 }
