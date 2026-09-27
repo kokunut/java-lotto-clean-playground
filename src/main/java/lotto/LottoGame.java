@@ -1,5 +1,7 @@
 package lotto;
 
+import java.util.List;
+
 public class LottoGame {
     private final InputView inputView;
     private final OutputView outputView;
@@ -15,6 +17,12 @@ public class LottoGame {
 
         outputView.printPurchaseResult(lottos.getLottos().size());
         printAllLottos(lottos);
+
+        List<Integer> winningNumbers = inputView.readWinningNumbers();
+        WinningNumbers winning = new WinningNumbers(winningNumbers);
+        WinningStatistics statistics = new WinningStatistics(lottos, winning);
+
+        outputView.printWinningStatistics(statistics, purchaseAmount);
     }
 
     private void printAllLottos(Lottos lottos) {
