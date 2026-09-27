@@ -43,4 +43,8 @@ public class Lotto {
     public List<Integer> getNumbers() {
         return numbers;
     }
+
+    public int countMatchNumbers(WinningNumbers winningNumbers) {
+        return winningNumbers.countMatch(numbers);
+    }
 }
